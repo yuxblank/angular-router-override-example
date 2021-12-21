@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: "lazy",
-    loadChildren: () => import("./lazy/lazy.module").then(value => value.LazyModule)
+    loadChildren: () => import("./lazy/lazy-routing.module").then(value => value.LazyRoutingModule)
   }
 ]
 

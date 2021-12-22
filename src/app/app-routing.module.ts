@@ -1,11 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {TestOverrideComponent} from "./test-override/test-override.component";
+import {EagerChildrenOverrideComponent} from "./eager-children-override/eager-children-override.component";
+import {EagerNewChildrenComponent} from "./eager-new-children/eager-new-children.component";
 
 const routes: Routes = [
   {
     path: "eager",
-    component: TestOverrideComponent
+    component: TestOverrideComponent,
+    children: [
+      {
+        path: "children",
+        component: EagerChildrenOverrideComponent
+      },
+      {
+        path: "children/new",
+        component: EagerNewChildrenComponent
+      }
+    ]
   },
   {
     path: "lazy",
@@ -17,4 +29,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+
+}

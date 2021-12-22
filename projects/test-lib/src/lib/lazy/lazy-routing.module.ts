@@ -3,8 +3,14 @@ import { CommonModule } from '@angular/common';
 import {RouterModule} from "@angular/router";
 import {LazyChildrenComponent} from "./lazy-children/lazy-children.component";
 import {LazyModule} from "./lazy.module";
+import {LoggerFactory} from "rng-logger";
 
 
+
+/**
+ * @internal
+ * @private
+ */
 
 @NgModule({
   declarations: [],
@@ -19,4 +25,10 @@ import {LazyModule} from "./lazy.module";
     ])
   ]
 })
-export class LazyRoutingModule { }
+export class LazyRoutingModule {
+  private readonly logger = LoggerFactory()
+
+  constructor() {
+    this.logger.warn("LazyRoutingModule")
+  }
+}

@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
     <p>
       test-lib works!
     </p>
+
+    <div>
+    <pre> Children host</pre>
+      <router-outlet></router-outlet>
+    </div>
+
   `,
   styles: [
   ]

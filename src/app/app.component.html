@@ -1,7 +1,19 @@
 
 <ul>
-  <li> <a [routerLink]="'eager'">Eager Loaded Route </a> </li>
-  <li><a [routerLink]="'lazy/lazy-component'">Lazy Loaded Route</a></li>
+  <li>
+    <a [routerLink]="'eager'">Eager Loaded Route override</a>
+    <ul>
+      <li> <a [routerLink]="'eager/children'">children override </a> </li>
+      <li> <a [routerLink]="'eager/children/new'">children new route </a> </li>
+    </ul>
+  </li>
+  <li><a [routerLink]="'lazy/lazy-component'">Lazy Loaded Route override</a>
+
+      <ul>
+        <li><a [routerLink]="'lazy/new-path'">lazy children new route</a></li>
+      </ul>
+
+  </li>
 </ul>
 
 <router-outlet></router-outlet>
